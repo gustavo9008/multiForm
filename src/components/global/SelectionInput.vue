@@ -3,7 +3,7 @@
     <div id="cardsContainer">
       <div
         @click="toggleOptionPlans('arcade')"
-        :class="{ active: arcadeOption }"
+        :class="store.selectPlan.planSelected === 'arcade' && 'active'"
       >
         <img id="cardIcon" src="../../assets/icon-arcade.svg" alt="arcade" />
         <span id="cardInfo">
@@ -16,7 +16,7 @@
       </div>
       <div
         @click="toggleOptionPlans('advanced')"
-        :class="{ active: advancedOption }"
+        :class="store.selectPlan.planSelected === 'advanced' && 'active'"
       >
         <img
           id="cardIcon"
@@ -31,7 +31,10 @@
           >
         </span>
       </div>
-      <div @click="toggleOptionPlans('pro')" :class="{ active: proOption }">
+      <div
+        @click="toggleOptionPlans('pro')"
+        :class="store.selectPlan.planSelected === 'pro' && 'active'"
+      >
         <img id="cardIcon" src="../../assets/icon-pro.svg" alt="pro" />
 
         <span id="cardInfo">
@@ -68,29 +71,29 @@ function toggleOptionPlans(op) {
   store.selectPlan.planSelected = op;
 
   // return;
-  switch (op) {
-    case "arcade":
-      arcadeOption.value = true;
-      advancedOption.value = false;
-      proOption.value = false;
+  // switch (op) {
+  //   case "arcade":
+  //     arcadeOption.value = true;
+  //     advancedOption.value = false;
+  //     proOption.value = false;
 
-      break;
-    case "advanced":
-      arcadeOption.value = false;
-      advancedOption.value = true;
-      proOption.value = false;
+  //     break;
+  //   case "advanced":
+  //     arcadeOption.value = false;
+  //     advancedOption.value = true;
+  //     proOption.value = false;
 
-      break;
-    case "pro":
-      arcadeOption.value = false;
-      advancedOption.value = false;
-      proOption.value = true;
+  //     break;
+  //   case "pro":
+  //     arcadeOption.value = false;
+  //     advancedOption.value = false;
+  //     proOption.value = true;
 
-      break;
+  //     break;
 
-    default:
-      break;
-  }
+  //   default:
+  //     break;
+  // }
 }
 </script>
 
