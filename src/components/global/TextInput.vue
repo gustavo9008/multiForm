@@ -1,37 +1,82 @@
 <template>
   <form id="inputContainer">
     <div>
-      <label for="name">Name</label>
+      <div id="labelInfo">
+        <label for="name">Name</label>
+        <p
+          v-if="
+            store.personalInfo.hasError === true &&
+            store.personalInfo.name === ''
+          "
+        >
+          Name is required
+        </p>
+      </div>
+
       <input
         v-model="store.personalInfo.name"
         type="text"
         id="name"
-        placeholder="Enter Name Here"
+        placeholder="John Doe"
+        :class="
+          store.personalInfo.hasError === true &&
+          store.personalInfo.name === '' &&
+          'error'
+        "
       />
-      <p>{{ store.personalInfo.name }}</p>
     </div>
 
     <div>
-      <label for="email">Email</label>
+      <div id="labelInfo">
+        <label for="email">Email</label>
+        <p
+          v-if="
+            store.personalInfo.hasError === true &&
+            store.personalInfo.email === ''
+          "
+        >
+          Email is required
+        </p>
+      </div>
+
       <input
         v-model="store.personalInfo.email"
         type="email"
         id="email"
-        placeholder="Enter Email"
+        placeholder="yourEmail@here.com"
+        :class="
+          store.personalInfo.hasError === true &&
+          store.personalInfo.email === '' &&
+          'error'
+        "
       />
-      <p>{{ store.personalInfo.email }}</p>
     </div>
 
     <div>
-      <label for="phoneNumber">Phone Number</label>
+      <div id="labelInfo">
+        <label for="phoneNumber">Phone Number</label>
+
+        <p
+          v-if="
+            store.personalInfo.hasError === true &&
+            store.personalInfo.phoneNumber === ''
+          "
+        >
+          Email is required
+        </p>
+      </div>
       <input
         v-model="store.personalInfo.phoneNumber"
         type="tel"
         name="Phone Number"
         id="phoneNumber"
-        placeholder="Enter Phone Number"
+        placeholder="123-456-7890"
+        :class="
+          store.personalInfo.hasError === true &&
+          store.personalInfo.phoneNumber === '' &&
+          'error'
+        "
       />
-      <p>{{ store.personalInfo.phoneNumber }}</p>
     </div>
   </form>
 </template>
@@ -45,6 +90,7 @@ import { store } from "../../store/store";
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-bottom: 20px;
 }
 #inputContainer div {
   display: flex;
@@ -54,12 +100,26 @@ import { store } from "../../store/store";
   margin-bottom: 10px;
 }
 #inputContainer div input {
+  font-size: 1rem;
   width: 100%;
   height: 40px;
   border-radius: 5px;
   border: 1px solid var(--LightGray);
   outline: none;
   padding: 0.2rem 1rem;
+}
+#labelInfo {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+}
+.error {
+  border-color: var(--StrawberryRed) !important;
+}
+#labelInfo p {
+  color: var(--StrawberryRed);
+  font-size: 14px;
+  font-weight: 600;
 }
 #inputContainer div input:focus {
   border-color: var(--PurplishBlue);

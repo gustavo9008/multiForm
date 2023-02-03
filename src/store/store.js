@@ -2,13 +2,14 @@ import { reactive } from 'vue'
 
 export const store = reactive({
     steps: {
-        stepNum: 2,
+        stepNum: 1,
         stepName: 'Your Info',
     },
     personalInfo: {
         name: '',
         email: '',
         phoneNumber: '',
+        hasError: 'false'
     },
     selectPlan: {
         planSelected: "arcade",
