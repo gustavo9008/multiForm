@@ -16,7 +16,7 @@ export const store = reactive({
         yearly: false,
     },
     addOns: {
-        onlineServices: false,
+        onlineService: false,
         largerStorage: false,
         customProfile: false,
     },

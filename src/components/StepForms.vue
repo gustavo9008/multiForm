@@ -16,6 +16,13 @@
       />
       <SelectionInput />
     </div>
+    <div id="addOnSelection" v-else-if="store.steps.stepNum === 3">
+      <InfoSteps
+        title="Pick add-ons"
+        info="Add-ons help enhance your gaming experience."
+      />
+      <AddOns />
+    </div>
   </section>
 </template>
 
@@ -25,6 +32,7 @@ import InfoSteps from "./global/InfoSteps.vue";
 import TextInput from "./global/TextInput.vue";
 // import InfoSteps from "./global/InfoSteps.vue";
 import SelectionInput from "./global/SelectionInput.vue";
+import AddOns from "./global/AddOns.vue";
 </script>
 
 <style scoped>
