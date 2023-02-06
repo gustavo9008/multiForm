@@ -89,6 +89,7 @@ form {
   border: 1px solid var(--LightGray);
   border-radius: 10px;
   padding: 1rem;
+  cursor: pointer;
 }
 input[type="checkbox"] {
   align-self: center;

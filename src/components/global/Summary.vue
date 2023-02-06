@@ -29,7 +29,7 @@
               store.selectPlan.yearly === true ? `Yearly` : `Monthly`
             }})
           </h3>
-          <button @click="store.steps.stepNum = 3" class="changePlanBtn">
+          <button @click="store.steps.stepNum = 2" class="changePlanBtn">
             Change
           </button>
         </div>
