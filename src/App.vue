@@ -156,6 +156,7 @@ table {
   --Alabaster: hsl(231, 100%, 99%);
   --White: hsl(0, 0%, 100%);
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

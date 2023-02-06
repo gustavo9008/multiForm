@@ -2,9 +2,9 @@
 import { defineProps } from "vue";
 import { store } from "../../store/store";
 
-function showPersonalInfo(info) {
-  console.log(info);
-}
+// function showPersonalInfo(info) {
+//   console.log(info);
+// }
 
 defineProps({
   stepNum: String,

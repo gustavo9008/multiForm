@@ -14,7 +14,6 @@
         <span id="checkboxContent">
           <label for="onlineService"> Online Service</label>
           <p>Access to multiplayer games</p>
-          <span>{{ store.addOns.onlineService }}</span>
         </span>
       </div>
 
@@ -34,7 +33,6 @@
         <span id="checkboxContent">
           <label for="largerStorage"> Larger Storage</label>
           <p>Extra 1TB of cloud save</p>
-          <span>{{ store.addOns.largerStorage }}</span>
         </span>
       </div>
 
@@ -54,7 +52,6 @@
         <span id="checkboxContent">
           <label for="customProfile"> Custom Profile</label>
           <p>Custom theme on your profile</p>
-          <span>{{ store.addOns.customProfile }}</span>
         </span>
       </div>
 
@@ -84,6 +81,8 @@ form {
 }
 #checkboxContainer {
   display: flex;
+  height: 85px;
+  /* max-height: 88px; */
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -99,18 +98,14 @@ input[type="checkbox"] {
   margin: 0;
   font: inherit;
   color: white;
-  width: 1.55em;
-  height: 1.55em;
+  width: 1.35em;
+  height: 1.35em;
   border: 0.15em solid var(--LightGray);
 }
-/* input[type="checkbox"]:checked {
-  background-color: var(--PurplishBlue) !important;
-  border-color: var(--PurplishBlue) !important;
-  color: white;
-} */
 
 #infoCheckbox {
   display: flex;
+  align-self: center;
   gap: 15px;
 }
 #checkboxContent label {

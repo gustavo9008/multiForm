@@ -67,33 +67,7 @@ const advancedOption = ref(false);
 const proOption = ref(false);
 
 function toggleOptionPlans(op) {
-  console.log(op);
   store.selectPlan.planSelected = op;
-
-  // return;
-  // switch (op) {
-  //   case "arcade":
-  //     arcadeOption.value = true;
-  //     advancedOption.value = false;
-  //     proOption.value = false;
-
-  //     break;
-  //   case "advanced":
-  //     arcadeOption.value = false;
-  //     advancedOption.value = true;
-  //     proOption.value = false;
-
-  //     break;
-  //   case "pro":
-  //     arcadeOption.value = false;
-  //     advancedOption.value = false;
-  //     proOption.value = true;
-
-  //     break;
-
-  //   default:
-  //     break;
-  // }
 }
 </script>
 

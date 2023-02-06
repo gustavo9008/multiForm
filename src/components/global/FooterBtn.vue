@@ -1,9 +1,15 @@
 <template>
-  <footer>
+  <footer v-if="!store.steps.orderComplete">
     <button id="goBackBtn" v-if="store.steps.stepNum !== 1" @click="goBack">
       go back
     </button>
-    <button id="nextStep" @click="checkForm">Next Step</button>
+    <button
+      @click="checkForm"
+      class="nextStep"
+      :class="store.steps.stepNum === 4 && `confirmHoverBtn`"
+    >
+      {{ store.steps.stepNum === 4 ? `Confirm` : `Next Step` }}
+    </button>
   </footer>
 </template>
 
@@ -11,21 +17,26 @@
 import { store } from "../../store/store";
 
 async function checkForm() {
+  //===== check if inputs are empty =====
   store.personalInfo.name === "" && (store.personalInfo.hasError = true);
   store.personalInfo.email === "" && (store.personalInfo.hasError = true);
   store.personalInfo.phoneNumber === "" && (store.personalInfo.hasError = true);
+  //===== check if inputs are not empty =====
   store.personalInfo.name !== "" &&
     store.personalInfo.email !== "" &&
     store.personalInfo.phoneNumber !== "" &&
     (store.personalInfo.hasError = false);
 
   if (store.personalInfo.hasError === false) {
-    console.log("false");
     nextStep();
   }
 }
 
 async function nextStep() {
+  if (store.steps.stepNum === 4) {
+    store.steps.orderComplete = true;
+    return;
+  }
   store.steps.stepNum++;
 }
 
@@ -41,7 +52,7 @@ footer {
   width: 100%;
   justify-content: flex-end;
 }
-#nextStep {
+.nextStep {
   align-self: center;
   border: 0;
   text-align: center;
@@ -74,6 +85,12 @@ footer {
 }
 #goBackBtn:hover {
   color: var(--MarineBlue);
+}
+.confirmHoverBtn {
+  background-color: var(--MarineBlue);
+}
+.confirmHoverBtn:hover {
+  background-color: var(--PastelBlue);
 }
 
 @media (max-width: 845px) {

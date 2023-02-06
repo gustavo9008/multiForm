@@ -62,7 +62,7 @@
             store.personalInfo.phoneNumber === ''
           "
         >
-          Email is required
+          Phone Number is required
         </p>
       </div>
       <input

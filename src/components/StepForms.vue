@@ -23,6 +23,14 @@
       />
       <AddOns />
     </div>
+    <div id="summary" v-else-if="store.steps.stepNum === 4">
+      <InfoSteps
+        v-if="!store.steps.orderComplete"
+        title="Finishing up"
+        info="Double-check everything looks OK before confirming."
+      />
+      <Summary />
+    </div>
   </section>
 </template>
 
@@ -33,6 +41,7 @@ import TextInput from "./global/TextInput.vue";
 // import InfoSteps from "./global/InfoSteps.vue";
 import SelectionInput from "./global/SelectionInput.vue";
 import AddOns from "./global/AddOns.vue";
+import Summary from "./global/Summary.vue";
 </script>
 
 <style scoped>
@@ -42,6 +51,9 @@ section {
   width: clamp(300px, 100%, 480px);
   padding: 1rem 1rem;
   border-radius: 20px;
+}
+#summary {
+  height: 100%;
 }
 @media (max-width: 845px) {
   section {
