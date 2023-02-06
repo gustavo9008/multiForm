@@ -38,7 +38,6 @@
 import { store } from "../store/store";
 import InfoSteps from "./global/InfoSteps.vue";
 import TextInput from "./global/TextInput.vue";
-// import InfoSteps from "./global/InfoSteps.vue";
 import SelectionInput from "./global/SelectionInput.vue";
 import AddOns from "./global/AddOns.vue";
 import Summary from "./global/Summary.vue";

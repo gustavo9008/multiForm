@@ -11,7 +11,6 @@
 
 <script setup>
 import Steps from "./global/Steps.vue";
-import { store } from "../store/store";
 </script>
 
 <style scoped>

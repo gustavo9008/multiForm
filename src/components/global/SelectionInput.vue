@@ -60,11 +60,6 @@
 
 <script setup>
 import { store } from "../../store/store";
-import { ref } from "vue";
-
-const arcadeOption = ref(true);
-const advancedOption = ref(false);
-const proOption = ref(false);
 
 function toggleOptionPlans(op) {
   store.selectPlan.planSelected = op;
