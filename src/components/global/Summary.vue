@@ -64,7 +64,9 @@
     </div>
   </aside>
   <aside id="thankYou" v-if="store.steps.orderComplete">
-    <img src="../../assets/icon-thank-you.svg" alt="thank you" />
+    <picture id="thankYouPicContainer">
+      <img src="../../assets/icon-thank-you.svg" alt="thank you" />
+    </picture>
     <h2>Thank you!</h2>
     <p>
       Thanks for confirming your subcription! We hope you have fun using our
@@ -266,9 +268,7 @@ async function editInfo() {
   gap: 25px;
   text-align: center;
 }
-#thankYou img {
-  flex-basis: 0;
-}
+
 #thankYou h2 {
   color: var(--MarineBlue);
   font-size: 1.8rem;
@@ -278,6 +278,11 @@ async function editInfo() {
   line-height: 2;
   color: var(--CoolGray);
   font-size: 1rem;
+}
+#thankYouPicContainer {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
 }
 @media (max-width: 845px) {
   #personalInfo {

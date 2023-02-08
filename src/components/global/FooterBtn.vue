@@ -87,7 +87,7 @@ footer {
   color: var(--MarineBlue);
 }
 .confirmHoverBtn {
-  background-color: var(--MarineBlue);
+  background-color: var(--PurplishBlue);
 }
 .confirmHoverBtn:hover {
   background-color: var(--PastelBlue);
